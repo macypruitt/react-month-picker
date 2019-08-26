@@ -2,10 +2,20 @@ import React, { Component } from 'react';
 
 
 class MonthItem extends Component {
-  render() {
+  
+    clickAlert = (event) => {
+    
+        let alertText=event.target.dataset.name;
+        alert(alertText);
+    }
+  
+    render() {
+
     return (
       <div>
-          <li>{this.props.month.name}</li>
+          <li data-name={this.props.month.name} onClick={this.clickAlert}>
+            {this.props.month.name}
+          </li>
       </div>
     );
   }
