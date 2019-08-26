@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import MonthList from '../MonthList/MonthList';
+import Header from '../Header/Header'
 
 class App extends Component {
 
   state={
-    calendarArray: []
+    calendarArray: [],
   }
+
   componentDidMount(){
     this.getCalendar();
   }
@@ -33,13 +35,9 @@ class App extends Component {
     console.log(this.state.calendarArray);
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Select a Month</h1>
-          <h3>SELECTED MONTH GOES HERE</h3>
-          <br/>
-        </header>
+        <Header />
         <br/>
-        <MonthList calendarArray={this.state.calendarArray} />
+        <MonthList calendarArray={this.state.calendarArray} setHeader={this.setHeader} />
       </div>
     );
   }

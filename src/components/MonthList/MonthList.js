@@ -7,11 +7,12 @@ class MonthList extends Component {
 
       let calendar = this.props.calendarArray.map((month, i) => {
             return (
-                    <MonthItem key={month.id} month={month} />
+                    <MonthItem key={month.id} month={month} setHeader={this.props.setHeader}/>
             )
       })
     return (
       <div>
+          <h3>Month List</h3>
           <ul>{calendar}</ul>
       </div>
     );
