@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import MonthItem from '../MonthItem/MonthItem'
 
 class MonthList extends Component {
   render() {
@@ -7,7 +7,7 @@ class MonthList extends Component {
 
       let calendar = this.props.calendarArray.map((month, i) => {
             return (
-                    <li key={month.id}>{month.name}</li>
+                    <MonthItem key={month.id} month={month} />
             )
       })
     return (

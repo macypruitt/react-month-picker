@@ -5,6 +5,7 @@ class MonthItem extends Component {
   render() {
     return (
       <div>
+          <li>{this.props.month.name}</li>
       </div>
     );
   }
